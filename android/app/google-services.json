@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "984197395728",
+    "project_id": "inventox-5268c",
+    "storage_bucket": "inventox-5268c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:984197395728:android:fc00c030602e04dc212195",
+        "android_client_info": {
+          "package_name": "com.inventox"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkV-MflE1CQ53G5lh5lys2lXbUzmfDqdQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

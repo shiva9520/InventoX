@@ -1,6 +1,5 @@
 import {
   Pressable,
-  StatusBar,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -17,6 +16,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import { Item } from './types';
 import { useTheme } from '../../context/ThemeContext';
 import { subscribeItems } from '../../services/firebase';
+import auth from '@react-native-firebase/auth';
 
 type HomeNavigationProp = NativeStackNavigationProp<
   AuthStackParamList,
@@ -42,12 +42,28 @@ const Home = () => {
     }
   };
   useEffect(() => {
-  const unsubscribe = subscribeItems(setData);
-  return () => unsubscribe();
-}, []);
+    let unsubscribeFirestore: (() => void) | undefined;
+
+    const unsubscribeAuth = auth().onAuthStateChanged(user => {
+      if (user) {
+        unsubscribeFirestore = subscribeItems(setData);
+      } else {
+        setData([]);
+      }
+    });
+
+    return () => {
+      unsubscribeAuth();
+      unsubscribeFirestore && unsubscribeFirestore();
+    };
+  }, []);
+  
+  useEffect(() => {
+    console.log('Updated items:', data);
+  }, [data]);
+
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
-
       <View
         style={{
           flexDirection: 'row',

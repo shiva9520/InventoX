@@ -19,6 +19,11 @@ const AllItemScreen = ({ data }: Props) => {
       <FlatList
         data={data ?? []}
         keyExtractor={item => item.id.toString()}
+         ListEmptyComponent={
+          <Text style={{ textAlign: 'center', marginTop: 20 }}>
+            No items found
+          </Text>
+        }
         renderItem={({ item }) => (
           <View
             style={[

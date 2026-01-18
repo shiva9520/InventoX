@@ -180,6 +180,7 @@ const styles = StyleSheet.create({
     flex: 1,
     height: 50,
     fontSize: 16,
+    color:'#000'
   },
 
   button: {

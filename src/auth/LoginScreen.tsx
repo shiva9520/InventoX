@@ -104,6 +104,7 @@ const LoginScreen = () => {
                 placeholder="Email"
                 placeholderTextColor="#999"
                 style={styles.input}
+                value={email}
                 onChangeText={setEmail}
                 autoCapitalize="none"
                 keyboardType="email-address"
@@ -114,9 +115,10 @@ const LoginScreen = () => {
               <TextInput
                 placeholder="Password"
                 onChangeText={setPassword}
+                value={password}
                 placeholderTextColor="#999"
                 style={styles.input}
-                secureTextEntry={!secure}
+                secureTextEntry={secure}
               />
               <TouchableOpacity onPress={() => setSecure(!secure)}>
                 <Feather
@@ -211,6 +213,7 @@ const styles = StyleSheet.create({
     flex: 1,
     height: 50,
     fontSize: 16,
+    color:'#000'
   },
 
   button: {

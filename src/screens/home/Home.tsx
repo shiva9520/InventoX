@@ -160,7 +160,7 @@ const Home = () => {
 
       {view === 0 && <AllItemScreen data={data} />}
       {view === 1 && (
-        <AllItemScreen data={data.filter(item => item.stock < 5)} />
+        <AllItemScreen data={data.filter(item => item.stock <= 5)} />
       )}
       {view === 2 && <CreateScreen data={data} setData={setData} />}
     </View>

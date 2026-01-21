@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 50,
     justifyContent: 'center',
     alignItems: 'stretch',
-    paddingBottom: 40,
+    paddingVertical:40
   },
   cardTitle: {
     fontSize: 24,
